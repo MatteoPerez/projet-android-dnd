@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "124850964416",
+    "project_id": "projet-android-dnd",
+    "storage_bucket": "projet-android-dnd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124850964416:android:9e78920850e40f4485ea25",
+        "android_client_info": {
+          "package_name": "fr.bluesam.tavernia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCre4iAlMs7HcgjhBZtDW2SLNaoYWnwoXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

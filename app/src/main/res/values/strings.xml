@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tavernia</string>
+    <string name="points_msg">Points : 0</string>
 </resources>
