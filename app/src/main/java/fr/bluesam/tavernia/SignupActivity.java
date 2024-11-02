@@ -44,16 +44,28 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 database = FirebaseDatabase.getInstance("https://projet-android-dnd-default-rtdb.europe-west1.firebasedatabase.app/");
                 reference = database.getReference("users");
+                
                 String username = signupUsername.getText().toString();
                 String email = signupEmail.getText().toString();
                 String password = signupPassword.getText().toString();
 
-                HelperClass helperClass = new HelperClass(username, email, password);
-                reference.child(username).setValue(helperClass);
+                reference.child(username).get().addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        if (task.getResult().exists()) {
+                            Toast.makeText(SignupActivity.this, "Username already taken", Toast.LENGTH_SHORT).show();
+                        } else {
+                            HelperClass helperClass = new HelperClass(username, email, password);
+                            reference.child(username).setValue(helperClass);
 
-                Toast.makeText(SignupActivity.this, "You have signed up successfully !", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
+                            Toast.makeText(SignupActivity.this, "You have signed up successfully !", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                    } else {
+                        Toast.makeText(SignupActivity.this, "Error while connecting, please try again", Toast.LENGTH_SHORT).show();
+                        Log.e("Firebase", "Error when checking username", task.getException());
+                    }
+                });
             }
         });
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
