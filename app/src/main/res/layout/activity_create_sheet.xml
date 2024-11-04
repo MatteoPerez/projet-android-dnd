@@ -1,13 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_page_accueil"
+    android:background="@drawable/bg_page_creation"
     android:orientation="vertical"
     tools:context=".CreateSheetActivity">
+
+    <Button
+        android:id="@+id/sheet_creation_button"
+        android:layout_width="358dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="CREATE"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="118dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="57dp"
+        android:background="@drawable/caracteristics"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sheet_creation_intelligence"
+        app:layout_constraintTop_toBottomOf="@+id/sheet_creation_name">
+
+        <EditText
+            android:id="@+id/sheet_creation_strength"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_creation_dexterity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/sheet_creation_dexterity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_creation_constitution"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_creation_strength" />
+
+        <EditText
+            android:id="@+id/sheet_creation_constitution"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_creation_intelligence"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_creation_dexterity" />
+
+        <EditText
+            android:id="@+id/sheet_creation_intelligence"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_creation_wisdom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_creation_constitution" />
+
+        <EditText
+            android:id="@+id/sheet_creation_wisdom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_creation_charisma"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_creation_intelligence" />
+
+        <EditText
+            android:id="@+id/sheet_creation_charisma"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_creation_wisdom" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -19,107 +180,34 @@
         app:title="Create Character"
         app:titleTextColor="@android:color/white" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Character creation"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        android:textStyle="bold" />
-
     <EditText
         android:id="@+id/sheet_creation_name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:hint="Name"
-        android:textColorHint="@color/black"
         android:padding="8dp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <EditText
         android:id="@+id/sheet_creation_class"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
         android:hint="Class"
-        android:textColorHint="@color/black"
         android:padding="8dp"
-        android:textColor="@color/black" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/sheet_creation_name"
+        app:layout_constraintTop_toBottomOf="@+id/sheet_creation_name" />
 
-    <EditText
-        android:id="@+id/sheet_creation_strength"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Strength"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_creation_dexterity"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Dexterity"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_creation_constitution"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Constitution"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_creation_intelligence"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Intelligence"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_creation_wisdom"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Wisdom"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_creation_charisma"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Charisma"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <Button
-        android:id="@+id/sheet_creation_button"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
-        android:text="CREATE"
-        android:textSize="18sp"
-        app:cornerRadius="20dp" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

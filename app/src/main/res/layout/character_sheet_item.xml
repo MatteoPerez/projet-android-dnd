@@ -29,7 +29,7 @@
             android:layout_marginBottom="8dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Delete character"
-            android:src="@android:drawable/ic_delete"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

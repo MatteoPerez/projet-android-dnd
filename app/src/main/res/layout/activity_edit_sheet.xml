@@ -1,12 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_page_creation"
     android:orientation="vertical"
     tools:context=".CreateSheetActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="118dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="57dp"
+        android:background="@drawable/caracteristics"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/sheet_creation_intelligence"
+        app:layout_constraintTop_toBottomOf="@+id/sheet_edit_name">
+
+        <EditText
+            android:id="@+id/sheet_edit_charisma"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_wisdom"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/sheet_edit_strength"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_edit_dexterity"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/sheet_edit_dexterity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_edit_constitution"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_strength"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/sheet_edit_constitution"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_edit_intelligence"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_dexterity"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <EditText
+            android:id="@+id/sheet_edit_intelligence"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_edit_wisdom"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_constitution"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <EditText
+            android:id="@+id/sheet_edit_wisdom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/sheet_edit_charisma"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_intelligence"
+            tools:layout_editor_absoluteX="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/sheet_creation_button"
+        android:layout_width="358dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="CREATE"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,105 +160,31 @@
         app:title="Edit Character"
         app:titleTextColor="@android:color/white" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Character modification"
-        android:textSize="36sp"
-        android:textAlignment="center"
-        android:textStyle="bold" />
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:id="@+id/sheet_edit_name"
-        android:layout_marginTop="40dp"
-        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:hint="Name"
+        android:padding="8dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textColor="@color/black" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:id="@+id/sheet_edit_class"
-        android:layout_marginTop="20dp"
-        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="100dp"
         android:hint="Class"
-        android:textColorHint="@color/black"
-        android:textColor="@color/black" />
-
-    <EditText
-        android:id="@+id/sheet_edit_strength"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Strength"
-        android:textColorHint="@color/black"
         android:padding="8dp"
-        android:inputType="number" />
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sheet_edit_name" />
 
-    <EditText
-        android:id="@+id/sheet_edit_dexterity"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Dexterity"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_edit_constitution"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Constitution"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_edit_intelligence"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Intelligence"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_edit_wisdom"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Wisdom"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/sheet_edit_charisma"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:hint="Charisma"
-        android:textColorHint="@color/black"
-        android:padding="8dp"
-        android:inputType="number" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="EDIT"
-        android:textSize="18sp"
-        android:id="@+id/sheet_creation_button"
-        android:layout_marginTop="30dp"
-        app:cornerRadius="20dp" />
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
