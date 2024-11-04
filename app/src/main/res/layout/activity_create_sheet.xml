@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_page_accueil"
     android:orientation="vertical"
     tools:context=".CreateSheetActivity">
 
@@ -12,32 +13,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Character creation"
-        android:textSize="36sp"
         android:textAlignment="center"
+        android:textSize="36sp"
         android:textStyle="bold" />
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
         android:id="@+id/sheet_creation_name"
-        android:layout_marginTop="40dp"
-        android:padding="8dp"
-        android:hint="Name"
-        android:textColor="@color/black" />
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/sheet_creation_class"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:hint="Name"
         android:padding="8dp"
-        android:hint="Class"
         android:textColor="@color/black" />
+
+    <EditText
+        android:id="@+id/sheet_creation_class"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:hint="Class"
+        android:padding="8dp"
+        android:textColor="@color/black" />
+
     <Button
+        android:id="@+id/sheet_creation_button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="30dp"
         android:text="CREATE"
         android:textSize="18sp"
-        android:id="@+id/sheet_creation_button"
-        android:layout_marginTop="30dp"
         app:cornerRadius="20dp" />
 
 </LinearLayout>
