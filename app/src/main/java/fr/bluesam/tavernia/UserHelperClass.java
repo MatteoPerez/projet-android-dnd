@@ -1,15 +1,15 @@
 package fr.bluesam.tavernia;
 
-public class HelperClass {
+public class UserHelperClass {
     String username, email, password;
 
-    public HelperClass(String username, String email, String password) {
+    public UserHelperClass(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
-    public HelperClass() {
+    public UserHelperClass() {
     }
 
     public String getUsername() {

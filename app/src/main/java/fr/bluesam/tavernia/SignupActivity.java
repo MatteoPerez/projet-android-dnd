@@ -9,16 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import org.w3c.dom.Text;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -54,11 +48,12 @@ public class SignupActivity extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             Toast.makeText(SignupActivity.this, "Username already taken", Toast.LENGTH_SHORT).show();
                         } else {
-                            HelperClass helperClass = new HelperClass(username, email, password);
-                            reference.child(username).setValue(helperClass);
+                            UserHelperClass userHelperClass = new UserHelperClass(username, email, password);
+                            reference.child(username).setValue(userHelperClass);
 
                             Toast.makeText(SignupActivity.this, "You have signed up successfully !", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                            intent.putExtra("username", username);
                             startActivity(intent);
                         }
                     } else {
