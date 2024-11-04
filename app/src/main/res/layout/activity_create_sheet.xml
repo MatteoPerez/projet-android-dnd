@@ -47,6 +47,72 @@
         android:padding="8dp"
         android:textColor="@color/black" />
 
+    <EditText
+        android:id="@+id/sheet_creation_strength"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Strength"
+        android:textColorHint="@color/black"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sheet_creation_dexterity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Dexterity"
+        android:textColorHint="@color/black"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sheet_creation_constitution"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Constitution"
+        android:textColorHint="@color/black"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sheet_creation_intelligence"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Intelligence"
+        android:textColorHint="@color/black"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sheet_creation_wisdom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Wisdom"
+        android:textColorHint="@color/black"
+        android:padding="8dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/sheet_creation_charisma"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Charisma"
+        android:textColorHint="@color/black"
+        android:padding="8dp"
+        android:inputType="number" />
+
     <Button
         android:id="@+id/sheet_creation_button"
         android:layout_width="match_parent"
