@@ -5,8 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/bg_login"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
@@ -15,59 +16,64 @@
         android:layout_margin="30dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            android:padding="24dp"
-            android:background="@drawable/red_border">
+            android:orientation="vertical"
+            android:padding="24dp">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:textSize="36sp"
                 android:textAlignment="center"
-                android:textStyle="bold"
-                android:textColor="@color/red" />
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
                 android:id="@+id/login_username"
-                android:background="@drawable/red_border"
-                android:layout_marginTop="40dp"
-                android:padding="8dp"
-                android:hint="Name"
-                android:drawableLeft="@drawable/baseline_person"
-                android:textColor="@color/black" />
-            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:id="@+id/login_password"
-                android:background="@drawable/red_border"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="40dp"
+                android:drawableLeft="@drawable/baseline_person"
+                android:drawableTint="?attr/colorPrimaryVariant"
+                android:hint="Name"
                 android:padding="8dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/baseline_lock"
+                android:drawableTint="?attr/colorPrimaryVariant"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:drawableLeft="@drawable/baseline_lock"
+                android:padding="8dp"
                 android:textColor="@color/black" />
+
             <Button
+                android:id="@+id/login_button"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="30dp"
                 android:text="LOG IN"
                 android:textSize="18sp"
-                android:id="@+id/login_button"
-                android:layout_marginTop="30dp"
                 app:cornerRadius="20dp" />
+
             <TextView
+                android:id="@+id/signupRedirectText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/signupRedirectText"
-                android:text="No account ? Sign up"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:textSize="18sp"
-                android:textColor="@color/red" />
+                android:text="No account ? Sign up"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

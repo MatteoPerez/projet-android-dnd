@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="Signup"
                 android:textAlignment="center"
-                android:textColor="@color/red"
+                android:textColor="?attr/actionModeSplitBackground"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
@@ -39,8 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/red_border"
                 android:drawableLeft="@drawable/baseline_person"
+                android:drawableTint="?attr/colorPrimaryVariant"
                 android:hint="Username"
                 android:padding="8dp"
                 android:textColor="@color/black" />
@@ -50,8 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/red_border"
                 android:drawableLeft="@drawable/baseline_email"
+                android:drawableTint="?attr/colorPrimaryVariant"
                 android:hint="Email"
                 android:padding="8dp"
                 android:textColor="@color/black" />
@@ -61,8 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/red_border"
                 android:drawableLeft="@drawable/baseline_lock"
+                android:drawableTint="?attr/colorPrimaryVariant"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
@@ -84,7 +84,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="Already an account ? Log in"
-                android:textColor="@color/red"
+                android:textColor="?attr/actionModeSplitBackground"
                 android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
