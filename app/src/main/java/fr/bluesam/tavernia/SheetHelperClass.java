@@ -3,7 +3,7 @@ package fr.bluesam.tavernia;
 public class SheetHelperClass {
     String name, cClass;
 
-    public SheetHelperClass(String cClass, String name) {
+    public SheetHelperClass(String name, String cClass) {
         this.cClass = cClass;
         this.name = name;
     }

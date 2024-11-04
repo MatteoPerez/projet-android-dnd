@@ -2,11 +2,13 @@ package fr.bluesam.tavernia;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -32,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     Button createSheetButton;
     FirebaseDatabase database;
     DatabaseReference reference;
+    private RecyclerView characterRecyclerView;
+    private SheetRecyclerView characterAdapter;
+    private List<SheetHelperClass> characterList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,34 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CreateSheetActivity.class);
                 intent.putExtra("username", username);
                 startActivity(intent);
+            }
+        });
+
+        characterRecyclerView = findViewById(R.id.character_recycler_view);
+        characterRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        characterList = new ArrayList<>();
+        characterAdapter = new SheetRecyclerView(characterList);
+        characterRecyclerView.setAdapter(characterAdapter);
+
+        username = getIntent().getStringExtra("username");
+
+        reference = FirebaseDatabase.getInstance("https://projet-android-dnd-default-rtdb.europe-west1.firebasedatabase.app/")
+                .getReference("users").child(username).child("sheets");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                characterList.clear();
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                    SheetHelperClass character = dataSnapshot.getValue(SheetHelperClass.class);
+                    characterList.add(character);
+                }
+                characterAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("MainActivity", "Failed to load characters", error.toException());
             }
         });
     }
