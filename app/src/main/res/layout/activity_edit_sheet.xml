@@ -8,6 +8,16 @@
     android:orientation="vertical"
     tools:context=".CreateSheetActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Edit Character"
+        app:titleTextColor="@android:color/white" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +32,7 @@
         android:layout_marginTop="40dp"
         android:padding="8dp"
         android:hint="Name"
+        android:textColorHint="@color/black"
         android:textColor="@color/black" />
     <EditText
         android:layout_width="match_parent"
@@ -30,11 +41,12 @@
         android:layout_marginTop="20dp"
         android:padding="8dp"
         android:hint="Class"
+        android:textColorHint="@color/black"
         android:textColor="@color/black" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="CREATE"
+        android:text="EDIT"
         android:textSize="18sp"
         android:id="@+id/sheet_creation_button"
         android:layout_marginTop="30dp"
