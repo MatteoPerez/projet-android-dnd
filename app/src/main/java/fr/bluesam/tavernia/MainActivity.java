@@ -3,11 +3,15 @@ package fr.bluesam.tavernia;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,33 +27,39 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private String username;
-    private Button createSheetButton;
-    private DatabaseReference reference;
+    Button createSheetButton;
+    FirebaseDatabase database;
+    DatabaseReference reference;
     private RecyclerView characterRecyclerView;
     private SheetRecyclerView characterAdapter;
     private List<SheetHelperClass> characterList;
-    private List<String> characterSheetIds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Initialiser la Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        // Obtenir le nom d'utilisateur de l'intent
         username = getIntent().getStringExtra("username");
 
         createSheetButton = findViewById(R.id.create_sheet_button);
-        createSheetButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CreateSheetActivity.class);
-            intent.putExtra("username", username);
-            startActivity(intent);
+        createSheetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CreateSheetActivity.class);
+                intent.putExtra("username", username);
+                startActivity(intent);
+            }
         });
 
         characterRecyclerView = findViewById(R.id.character_recycler_view);
         characterRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         characterList = new ArrayList<>();
-        characterSheetIds = new ArrayList<>();
-
-        characterAdapter = new SheetRecyclerView(this, characterList, characterSheetIds, username);
+        characterAdapter = new SheetRecyclerView(this, characterList, new ArrayList<>(), username);
         characterRecyclerView.setAdapter(characterAdapter);
 
         reference = FirebaseDatabase.getInstance("https://projet-android-dnd-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users").child(username).child("sheets");
@@ -58,14 +68,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 characterList.clear();
-                characterSheetIds.clear();
-
+                List<String> ids = new ArrayList<>();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     SheetHelperClass character = dataSnapshot.getValue(SheetHelperClass.class);
                     characterList.add(character);
-                    characterSheetIds.add(dataSnapshot.getKey());
+                    ids.add(dataSnapshot.getKey());
                 }
-                characterAdapter.notifyDataSetChanged();
+                characterAdapter = new SheetRecyclerView(MainActivity.this, characterList, ids, username);
+                characterRecyclerView.setAdapter(characterAdapter);
             }
 
             @Override
@@ -74,4 +84,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_activity_topnav, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.action_logout) {
+            Toast.makeText(this, "Logged out successfully", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
+

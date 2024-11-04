@@ -37,21 +37,14 @@ public class SheetRecyclerView extends RecyclerView.Adapter<SheetRecyclerView.Vi
     public void deleteCharacterSheet(int position) {
         if (position >= 0 && position < characterSheetIds.size()) {
             String sheetId = characterSheetIds.get(position);
-            DatabaseReference reference = FirebaseDatabase.getInstance("https://projet-android-dnd-default-rtdb.europe-west1.firebasedatabase.app/")
-                    .getReference("users").child(username).child("sheets").child(sheetId);
-
+            DatabaseReference reference = FirebaseDatabase.getInstance("https://projet-android-dnd-default-rtdb.europe-west1.firebasedatabase.app/").getReference("users").child(username).child("sheets").child(sheetId);
             // Suppression dans Firebase avec gestion des erreurs
             reference.removeValue().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    // Suppression de l'élément dans les listes locales
-                    try {
-                        characterSheets.remove(position);
-                        characterSheetIds.remove(position);
-                        notifyItemRemoved(position);
-                        Toast.makeText(context, "Character deleted", Toast.LENGTH_SHORT).show();
-                    } catch (IndexOutOfBoundsException e) {
-                        Log.e("SheetRecyclerView", "Error removing item: ", e);
-                    }
+                    characterSheets.remove(position);
+                    characterSheetIds.remove(position);
+                    notifyItemRemoved(position);
+                    Toast.makeText(context, "Character deleted", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(context, "Failed to delete character", Toast.LENGTH_SHORT).show();
                 }
@@ -88,7 +81,7 @@ public class SheetRecyclerView extends RecyclerView.Adapter<SheetRecyclerView.Vi
         holder.editButton.setOnClickListener(v -> {
             Intent intent = new Intent(context, EditSheetActivity.class);
             intent.putExtra("username", username);
-            intent.putExtra("characterId", characterSheetIds.get(position));  // Pass the Firebase ID for editing
+            intent.putExtra("characterId", characterSheetIds.get(position));
             context.startActivity(intent);
         });
     }

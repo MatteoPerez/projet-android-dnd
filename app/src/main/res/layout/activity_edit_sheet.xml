@@ -36,14 +36,13 @@
             android:textColorHint="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_wisdom"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_wisdom" />
 
         <EditText
             android:id="@+id/sheet_edit_strength"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:background="@android:color/transparent"
             android:ems="10"
@@ -55,8 +54,8 @@
             android:textColorHint="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/sheet_edit_dexterity"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/sheet_edit_dexterity"
@@ -74,8 +73,8 @@
             android:textColorHint="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/sheet_edit_constitution"
-            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_strength"
-            tools:layout_editor_absoluteX="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_strength" />
 
         <EditText
             android:id="@+id/sheet_edit_constitution"
@@ -93,8 +92,8 @@
             android:textColorHint="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/sheet_edit_intelligence"
-            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_dexterity"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_dexterity" />
 
         <EditText
             android:id="@+id/sheet_edit_intelligence"
@@ -112,8 +111,8 @@
             android:textColorHint="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/sheet_edit_wisdom"
-            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_constitution"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_constitution" />
 
         <EditText
             android:id="@+id/sheet_edit_wisdom"
@@ -131,19 +130,19 @@
             android:textColorHint="@color/white"
             android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@+id/sheet_edit_charisma"
-            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_intelligence"
-            tools:layout_editor_absoluteX="0dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sheet_edit_intelligence" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/sheet_creation_button"
+        android:id="@+id/sheet_editing_button"
         android:layout_width="358dp"
         android:layout_height="44dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="CREATE"
+        android:text="FINISH"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -210,12 +209,14 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/health"
-            tools:layout_editor_absoluteY="0dp" />
+            tools:layout_editor_absoluteY="0dp"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/sheet_edit_hp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:background="@android:color/transparent"
             android:ems="10"
             android:hint="0"
@@ -223,8 +224,12 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="43dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.065"
+            tools:ignore="MissingConstraints" />
 
         <EditText
             android:id="@+id/sheet_edit_max_hp"
@@ -237,8 +242,13 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            tools:layout_editor_absoluteX="126dp"
-            tools:layout_editor_absoluteY="67dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintHorizontal_bias="0.888"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2"
+            app:layout_constraintVertical_bias="0.779"
+            tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -254,8 +264,16 @@
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/inventory"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
         <EditText
-            android:id="@+id/inventory2"
+            android:id="@+id/sheet_edit_inventory"
             android:layout_width="219dp"
             android:layout_height="112dp"
             android:background="@android:color/transparent"
@@ -265,16 +283,12 @@
             android:inputType="textMultiLine"
             android:textColorHint="@color/white"
             android:textSize="14sp"
-            tools:layout_editor_absoluteX="13dp"
-            tools:layout_editor_absoluteY="93dp" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/inventory"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="@+id/imageView3"
+            app:layout_constraintHorizontal_bias="0.551"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:layout_constraintVertical_bias="0.553" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

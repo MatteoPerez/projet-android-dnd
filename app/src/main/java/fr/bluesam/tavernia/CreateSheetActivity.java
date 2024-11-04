@@ -49,7 +49,7 @@ public class CreateSheetActivity extends AppCompatActivity {
         characterWisdom = findViewById(R.id.sheet_creation_wisdom);
         characterCharisma = findViewById(R.id.sheet_creation_charisma);
         characterInventory = findViewById(R.id.sheet_creation_inventory);
-        createSheetButton = findViewById(R.id.finish_editing_button);
+        createSheetButton = findViewById(R.id.sheet_creation_button);
 
         // Configurer la Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);

@@ -45,7 +45,7 @@ public class EditSheetActivity extends AppCompatActivity {
         characterWisdom = findViewById(R.id.sheet_edit_wisdom);
         characterCharisma = findViewById(R.id.sheet_edit_charisma);
         characterInventory = findViewById(R.id.sheet_edit_inventory);
-        saveButton = findViewById(R.id.finish_editing_button);
+        saveButton = findViewById(R.id.sheet_editing_button);
 
         username = getIntent().getStringExtra("username");
         characterId = getIntent().getStringExtra("characterId");
@@ -58,6 +58,15 @@ public class EditSheetActivity extends AppCompatActivity {
                 if (sheet != null) {
                     characterName.setText(sheet.getName());
                     characterClass.setText(sheet.getcClass());
+                    characterMaxHP.setText(sheet.getMaxHP());
+                    characterHP.setText(sheet.getHP());
+                    characterStrength.setText(sheet.getStrength());
+                    characterDexterity.setText(sheet.getDexterity());
+                    characterConstitution.setText(sheet.getConstitution());
+                    characterIntelligence.setText(sheet.getIntelligence());
+                    characterWisdom.setText(sheet.getWisdom());
+                    characterCharisma.setText(sheet.getCharisma());
+                    characterInventory.setText(sheet.getInventory());
                 }
             }
         });
