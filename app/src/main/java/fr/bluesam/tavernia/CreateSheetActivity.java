@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CreateSheetActivity extends AppCompatActivity {
 
     private String username;
-    private EditText characterName, characterClass;
+    private EditText characterName, characterClass, characterMaxHP, characterHP, characterStrength, characterDexterity, characterConstitution, characterIntelligence, characterWisdom, characterCharisma, characterInventory;
     private Button createSheetButton;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -37,6 +37,20 @@ public class CreateSheetActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Initialiser les éléments de l'interface
+        characterName = findViewById(R.id.sheet_creation_name);
+        characterClass = findViewById(R.id.sheet_creation_class);
+        characterMaxHP = findViewById(R.id.sheet_creation_max_hp);
+        characterHP = findViewById(R.id.sheet_creation_hp);
+        characterStrength = findViewById(R.id.sheet_creation_strength);
+        characterDexterity = findViewById(R.id.sheet_creation_dexterity);
+        characterConstitution = findViewById(R.id.sheet_creation_constitution);
+        characterIntelligence = findViewById(R.id.sheet_creation_intelligence);
+        characterWisdom = findViewById(R.id.sheet_creation_wisdom);
+        characterCharisma = findViewById(R.id.sheet_creation_charisma);
+        characterInventory = findViewById(R.id.sheet_creation_inventory);
+        createSheetButton = findViewById(R.id.finish_editing_button);
+
         // Configurer la Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,12 +60,6 @@ public class CreateSheetActivity extends AppCompatActivity {
             getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_arrow_back);
         }
 
-        // Initialiser les éléments de l'interface
-        characterName = findViewById(R.id.sheet_creation_name);
-        characterClass = findViewById(R.id.sheet_creation_class);
-        createSheetButton = findViewById(R.id.sheet_creation_button);
-
-        //
         createSheetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +74,15 @@ public class CreateSheetActivity extends AppCompatActivity {
 
         String name = characterName.getText().toString();
         String cClass = characterClass.getText().toString();
+        String maxHP = characterMaxHP.getText().toString();
+        String HP = characterHP.getText().toString();
+        String strength = characterStrength.getText().toString();
+        String dexterity = characterDexterity.getText().toString();
+        String constitution = characterConstitution.getText().toString();
+        String intelligence = characterIntelligence.getText().toString();
+        String wisdom = characterWisdom.getText().toString();
+        String charisma = characterCharisma.getText().toString();
+        String inventory = characterInventory.getText().toString();
         username = getIntent().getStringExtra("username");
 
         if (name.isEmpty() || cClass.isEmpty()) {
@@ -73,7 +90,7 @@ public class CreateSheetActivity extends AppCompatActivity {
             return;
         }
 
-        SheetHelperClass sheetHelperClass = new SheetHelperClass(name, cClass);
+        SheetHelperClass sheetHelperClass = new SheetHelperClass(name, cClass, maxHP, HP, strength, dexterity, constitution, intelligence, wisdom, charisma, inventory);
         String characterId = reference.push().getKey();
         assert characterId != null;
 
